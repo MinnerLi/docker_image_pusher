@@ -31,21 +31,22 @@ https://cr.console.aliyun.com/<br>
 Fork本项目<br>
 #### 启动Action
 进入您自己的项目，点击Action，启用Github Action功能<br>
-#### 配置环境变量
-进入Settings->Secret and variables->Actions->New Repository secret
+启用方法：依次点击 new workflow-->选择阿里云标志的模板
+#### 配置本项目环境变量
+进入项目标签页的Settings->Secret and variables->Actions->New Repository secret
 ![](doc/配置环境变量.png)
 将上一步的**四个值**<br>
 ALIYUN_NAME_SPACE,ALIYUN_REGISTRY_USER，ALIYUN_REGISTRY_PASSWORD，ALIYUN_REGISTRY<br>
-配置成环境变量
+配置成4个环境变量
 
 ### 添加镜像
-打开images.txt文件，添加你想要的镜像 
+打开images.txt文件，添加你想要的镜像 ，一行代表一个镜像
 可以加tag，也可以不用(默认latest)<br>
 可添加 --platform=xxxxx 的参数指定镜像架构<br>
 可使用 k8s.gcr.io/kube-state-metrics/kube-state-metrics 格式指定私库<br>
 可使用 #开头作为注释<br>
 ![](doc/images.png)
-文件提交后，自动进入Github Action构建
+文件提交后，自动进入Github Action构建。此时可以进入阿里云镜像仓库查看到构建的镜像
 
 ### 使用镜像
 回到阿里云，镜像仓库，点击任意镜像，可查看镜像状态。(可以改成公开，拉取镜像免登录)
